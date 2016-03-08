@@ -8,6 +8,14 @@ namespace Homework8Actual.Models
 {
     public class AnimalContext : DbContext
     {
+        public AnimalContext()
+               : base("SQLAzureConnection")
+        {
+
+        }
         public DbSet<Animal> Animals { get; set; }
+
+        
+
     }
 }

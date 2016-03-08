@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Homework8Actual.Models
 {
-    public class AnimalContextInitializer : DropCreateDatabaseAlways<AnimalContext>
+    public class AnimalContextInitializer : DropCreateDatabaseIfModelChanges<AnimalContext>
     {
         protected override void Seed(AnimalContext context)
         {
