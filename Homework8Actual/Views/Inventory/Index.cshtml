@@ -9,26 +9,27 @@
     @foreach (var Animal in Model)
     {
         <div class="col-xs-3">
-            <img class="img img-thumbnail" href="@Animal.Image" />
+            <img class="img img-thumbnail" src="@Animal.Image" />
         </div>
         <div class="col-xs-9">
             <div class="list-group">
-                <div class="list-group-item">@Animal.Name</div>
                 <div class="list-group-item">
-                    @Animal.Quantity
+                    <strong>Name: </strong>@Animal.Name</div>
+                <div class="list-group-item">
+                    <strong>Number in stock: </strong>@Animal.Quantity
                 </div>
                 <div class="list-group-item">
-                    @Animal.Price
+                    <strong>Price: </strong>@Animal.Price
                 </div>
                 <div class="list-group-item">
-                    @Animal.Description
+                    <strong>Description: </strong>@Animal.Description
                 </div>
                 <div class="list-group-item">
-                    @Animal.DateReceieved
+                    <strong>Date Received </strong>@Animal.DateReceieved
                 </div>
 
                 <div class="list-group-item">
-                    @Html.ActionLink("Details", "Details", new { id = Animal.AnimalID })
+                    @Html.ActionLink("Details", "Details", new { id = Animal.AnimalID }, new { @class = "btn btn-primary" })
                 </div>
             </div>
         </div>
