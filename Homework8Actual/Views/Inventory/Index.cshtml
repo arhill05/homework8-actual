@@ -8,28 +8,19 @@
 <div class="container">
     @foreach (var Animal in Model)
     {
-        <div class="col-xs-3">
-            <img class="img img-thumbnail" src="@Animal.Image" />
-        </div>
-        <div class="col-xs-9">
-            <div class="list-group">
-                <div class="list-group-item">
-                    <strong>Name: </strong>@Animal.Name</div>
-                <div class="list-group-item">
-                    <strong>Number in stock: </strong>@Animal.Quantity
+        <div class="panel panel-default">
+            <div class="panel-heading"><h2>@Animal.Name</h2></div>
+            <div class="panel-body">
+                <div class="col-xs-3">
+                    <img class="img img-thumbnail" src="@Animal.Image" />
                 </div>
-                <div class="list-group-item">
-                    <strong>Price: </strong>@Animal.Price
-                </div>
-                <div class="list-group-item">
-                    <strong>Description: </strong>@Animal.Description
-                </div>
-                <div class="list-group-item">
-                    <strong>Date Received </strong>@Animal.DateReceieved
-                </div>
-
-                <div class="list-group-item">
-                    @Html.ActionLink("Details", "Details", new { id = Animal.AnimalID }, new { @class = "btn btn-primary" })
+                <div class="col-xs-9">
+                    <div>
+                        @Animal.Description
+                    </div>
+                    <div style="float:right;">
+                        @Html.ActionLink("Details", "Details", new { id = Animal.AnimalID }, new { @class = "btn btn-primary" })
+                    </div>
                 </div>
             </div>
         </div>

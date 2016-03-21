@@ -17,8 +17,8 @@ namespace Homework8Actual.Controllers
             List<Animal> animals = db.Animals.ToList();
             foreach (Animal animal in animals)
             {
-                if (animal.Description.Length > 49)
-                    animal.Description = animal.Description.Remove(50, animal.Description.Length - 50) + "...";
+                if (animal.Description.Length > 199)
+                    animal.Description = animal.Description.Remove(200, animal.Description.Length - 200) + "...";
             }
             return View(animals);
         }
